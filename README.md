@@ -31,15 +31,23 @@ To run the code, simply execute the provided script in your Python environment. 
 
 The script will output a table that looks like this:
 
-| Algorithm      | RMSE Mean | RMSE Std | MAE Mean | MAE Std | Fit Time Mean | Test Time Mean |
-|----------------|-----------|----------|----------|---------|---------------|----------------|
-| SVD            | 0.859966  | 0.001462 | 0.654187 | 0.001141 | 23.955620     | 0.814153       |
-| NMF            | 0.849209  | 0.001781 | 0.653305 | 0.001397 | 13.608271     | 1.071799       |
-| CoClustering   | 0.890069  | 0.003896 | 0.691604 | 0.002693 | 28.741858     | 0.768877       |
-| SlopeOne       | 0.867366  | 0.002115 | 0.663711 | 0.001434 | 7.199376      | 16.545004      |
-| KNNBasic       | 0.897160  | 0.000567 | 0.684796 | 0.000515 | 15.216415     | 79.488078      |
+| Algorithm       | RMSE Mean | RMSE Std | MAE Mean | MAE Std | Fit Time Mean | Test Time Mean |
+|-----------------|-----------|----------|----------|---------|---------------|----------------|
+| SVD             | 0.936621  | 0.007199 | 0.738091 | 0.006104| 0.743771      | 0.115549       |
+| NMF             | 0.963241  | 0.007117 | 0.757923 | 0.005815| 1.410286      | 0.115873       |
+| Co Clustering   | 0.967707  | 0.008360 | 0.757615 | 0.005793| 1.252161      | 0.090510       |
+| SlopeOne        | 0.944792  | 0.007117 | 0.742524 | 0.004487| 0.566474      | 1.904395       |
+| KNNBasic        | 0.978599  | 0.002274 | 0.773216 | 0.001964| 0.264673      | 2.149462       |
 
 Additionally, a bar plot comparing the RMSE means of all algorithms will be generated.
+
+### Results Summary
+
+From the output above, we can draw the following conclusions:
+- **SVD** provides the best accuracy, with the lowest RMSE (0.936621) and MAE (0.738091) values.
+- **NMF** and **CoClustering** have slightly higher RMSE values compared to SVD but are still competitive.
+- **KNNBasic** has the highest RMSE (0.978599), indicating that it performs the worst in terms of prediction accuracy.
+- In terms of computational efficiency, **KNNBasic** has the shortest fit time (0.264673), while **SlopeOne** and **KNNBasic** have the longest test times.
 
 ## Algorithms Used
 
@@ -51,7 +59,7 @@ Additionally, a bar plot comparing the RMSE means of all algorithms will be gene
 
 ## Results
 
-The RMSE values will help you decide which algorithm performs best in terms of prediction accuracy. Additionally, the fit time and test time provide insight into the computational efficiency of each algorithm.
+Based on the RMSE, MAE, fit time, and test time metrics, **SVD** emerges as the most accurate algorithm for the MovieLens 100K dataset, with the lowest RMSE and MAE scores. However, depending on your requirements, algorithms like **NMF** or **CoClustering** might be better suited if you prefer faster fit times and are willing to trade a small amount of accuracy.
 
 ## License
 
